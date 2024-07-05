@@ -37,8 +37,9 @@ function PlaySongsWithId({ params }) {
       {songs.map((element) => {
         return (
           <>
-            <Box sx={{ minHeight: 350 }} className="p-2">
+            <Box loading="lazy" sx={{ minHeight: 350 }} className="p-2">
               <Card
+                loading="lazy"
                 variant="outlined"
                 sx={(theme) => ({
                   width: 300,
@@ -119,7 +120,7 @@ function PlaySongsWithId({ params }) {
                       pointerEvents: "none",
                     }}
                   >
-                    <img alt="" src={element.track.album.images[0].url} />
+                    <img alt="image" src={element.track.album.images[0]?.url} />
                   </AspectRatio>
                   <audio src={element.track.preview_url} controls></audio>
                 </Box>
